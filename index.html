@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handyman Receipt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Handyman Receipt Generator</h1>
+        <form id="receipt-form">
+            <div class="section">
+                <h2>Business Information</h2>
+                <label for="logo">Logo</label>
+                <input type="file" id="logo" accept="image/png, image/jpeg, image/gif">
+                <label for="business-name">Business Name</label>
+                <input type="text" id="business-name" required>
+                <label for="business-address">Address</label>
+                <input type="text" id="business-address" required>
+                <label for="business-phone">Phone</label>
+                <input type="text" id="business-phone" required>
+                <label for="business-email">Email</label>
+                <input type="email" id="business-email" required>
+                <label for="business-website">Website</label>
+                <input type="text" id="business-website">
+            </div>
+
+            <div class="section">
+                <h2>Receipt Information</h2>
+                <label for="receipt-number">Receipt Number</label>
+                <input type="text" id="receipt-number" required>
+                <label for="tax-percentage">Tax %</label>
+                <input type="number" id="tax-percentage" step="0.01" required>
+                <label for="tip">Tip</label>
+                <input type="number" id="tip" step="0.01" required>
+            </div>
+
+            <div class="section">
+                <h2>Client Information</h2>
+                <label for="client-name">Client Name</label>
+                <input type="text" id="client-name" required>
+                <label for="client-address">Address</label>
+                <input type="text" id="client-address" required>
+                <label for="client-phone">Phone</label>
+                <input type="text" id="client-phone" required>
+                <label for="client-email">Email</label>
+                <input type="email" id="client-email">
+            </div>
+
+            <div class="section">
+                <h2>Services Provided</h2>
+                <div id="services">
+                    <div class="service">
+                        <label for="service-description-1">Description</label>
+                        <input type="text" id="service-description-1" required>
+                        <label for="service-quantity-1">Quantity</label>
+                        <input type="number" id="service-quantity-1" required>
+                        <label for="service-unit-price-1">Unit Price</label>
+                        <input type="number" id="service-unit-price-1" step="0.01" required>
+                    </div>
+                </div>
+                <button type="button" id="add-service">Add Another Service</button>
+            </div>
+
+            <div class="section">
+                <h2>Payment Information</h2>
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method">
+                    <option value="cash">Cash</option>
+                    <option value="check">Check</option>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="online">Online Payment</option>
+                </select>
+                <label for="payment-received">Payment Received</label>
+                <input type="number" id="payment-received" step="0.01" required>
+            </div>
+
+            <div class="section">
+                <h2>Signature</h2>
+                <label for="signature">Your Signature</label>
+                <input type="text" id="signature" required>
+            </div>
+
+            <button type="submit">Generate Receipt</button>
+        </form>
+
+        <div id="receipt" class="section hidden">
+            <h2>Receipt</h2>
+            <div id="receipt-content"></div>
+            <button id="print-receipt">Print Receipt</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
